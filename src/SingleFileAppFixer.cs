@@ -1,5 +1,7 @@
+using System.Reflection;
 using System.Text.RegularExpressions;
 using CodeMechanic.Async;
+using CodeMechanic.Bash;
 using CodeMechanic.Diagnostics;
 using CodeMechanic.FileSystem;
 using CodeMechanic.RegularExpressions;
@@ -17,7 +19,7 @@ public class SingleFileAppFixer : QueuedService
     private readonly Logger logger;
     private bool debug;
     private readonly Grepper single_file_app_grepper;
-    private readonly string root;
+    private string root;
 
     string[] project_types = new[] { "library", "api", "razorapp" };
 
@@ -80,6 +82,20 @@ public class SingleFileAppFixer : QueuedService
         // todo: actually promote it
 
 
+        string project_namespace = Path.GetFileName(path_of_file_to_promote);
+        // string output_from_scaffolding = await $"dotnet new razor".Bash(verbose: false);
+
+        // update the project root
+        this.root = Path.Combine(root, project_namespace);
+        logger.Information($"New app created at '{this.root}'");
+
+        var ass = Assembly.GetExecutingAssembly();
+        string template = CodeMechanic.Embeds.EmbedExtensions.ReadFile(ass, "razor.app.template");
+
+        Console.WriteLine($"{nameof(template)} :>> {template}");
+
+        // string output_from_build = await $"cd {this.root} && dotnet build".Bash(verbose: true);
+        // logger.Information($"{nameof(output_from_build)} :>> {output_from_build}");
     }
 }
 

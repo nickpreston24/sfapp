@@ -1,0 +1,3 @@
+[submodule "CodeMechanic.Embeds"]
+	path = CodeMechanic.Embeds
+	url = https://github.com/nickpreston24/CodeMechanic.Embeds.git

@@ -1,0 +1,1 @@
+<PackageReference Include="$package_name$" Version="$version$"/>

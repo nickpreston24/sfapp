@@ -19,6 +19,7 @@
     <PackageReference Include="CodeMechanic.Async" Version="1.0.4"/>
     <PackageReference Include="CodeMechanic.Bash" Version="1.0.2"/>
     <PackageReference Include="CodeMechanic.Diagnostics" Version="1.0.4"/>
+    <PackageReference Include="CodeMechanic.Embeds" Version="1.0.5"/>
     <PackageReference Include="CodeMechanic.FileSystem" Version="2.0.16"/>
     <PackageReference Include="CodeMechanic.RegularExpressions" Version="1.0.11"/>
     <PackageReference Include="CodeMechanic.Shargs" Version="1.0.5"/>
@@ -28,6 +29,11 @@
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0"/>
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0"/>
     <PackageReference Include="Sharprompt" Version="3.0.0"/>
+  </ItemGroup>
+
+  <!--  embeds-->
+  <ItemGroup>
+    <EmbeddedResource Include="templates/*.template"/>
   </ItemGroup>
 
 </Project>
