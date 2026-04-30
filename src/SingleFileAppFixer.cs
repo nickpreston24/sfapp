@@ -2,6 +2,7 @@ using System.Text.RegularExpressions;
 using CodeMechanic.Async;
 using CodeMechanic.Diagnostics;
 using CodeMechanic.FileSystem;
+using CodeMechanic.RegularExpressions;
 using CodeMechanic.Types;
 using Sharprompt;
 
@@ -48,14 +49,22 @@ public class SingleFileAppFixer : QueuedService
     {
         logger.Information($"Looking for files in dir '{root}'");
 
-        var matching_files = single_file_app_grepper
-            .GetMatchingFiles(SingleFileAppPatterns.Package())
+        var packages_detected = single_file_app_grepper
+            .GetMatchingFiles(SingleFileAppPatterns.Package());
+
+        var matching_files = packages_detected
             .DistinctBy(f => f.FilePath)
             .Select(file => file.FilePath)
             .ToArray();
 
-        var dirfiles = single_file_app_grepper.GetFileNames().Dump("filenames");
+        // var dirfiles = single_file_app_grepper.GetFileNames().Dump("filenames");
 
+        var packages_to_convert = packages_detected
+            .SelectMany(x => x.Line.Extract<SingleFileAppPackage>(SingleFileAppPatterns.Package()));
+
+        // e.g. `dotnet run promote --debug`  or `sfapp promote --debug`
+        if (debug)
+            packages_to_convert.Dump(nameof(packages_to_convert));
 
         if (matching_files.Length == 0)
         {
@@ -69,6 +78,8 @@ public class SingleFileAppFixer : QueuedService
         logger.Information($"Promoting file '{Path.GetFileName(path_of_file_to_promote)}'");
 
         // todo: actually promote it
+
+
     }
 }
 
