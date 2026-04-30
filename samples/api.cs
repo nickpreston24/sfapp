@@ -16,7 +16,7 @@ var logger = new LoggerConfiguration()
     .MinimumLevel.Information()
     .WriteTo.Console()
     .WriteTo.File(
-        ".tui/logs/tui.log",
+        ".sample_api/logs/sample_api.log",
         rollingInterval: RollingInterval.Day,
         rollOnFileSizeLimit: true
     )
