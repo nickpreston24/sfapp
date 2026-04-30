@@ -1,3 +1,4 @@
+using CodeMechanic.FileSystem;
 using CodeMechanic.Shargs;
 using Serilog;
 using Serilog.Core;
@@ -9,6 +10,9 @@ internal class Program
 {
     static async Task Main(string[] args)
     {
+        DotEnv.Load();
+
+
         var arguments = new ArgsMap(args);
 
         var logger = new LoggerConfiguration()
