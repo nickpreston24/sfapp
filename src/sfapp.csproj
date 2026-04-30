@@ -1,37 +1,39 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
 
-        <ToolCommandName>sfapp</ToolCommandName>
-        <PackageOutputPath>./nupkg</PackageOutputPath>
-        <PackAsTool>True</PackAsTool>
-        <IsPackable>True</IsPackable>
+    <ToolCommandName>sfapp</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    <PackAsTool>True</PackAsTool>
+    <IsPackable>True</IsPackable>
+    <ToolName>sfapp</ToolName>
+    <RootNamespace>sfapp</RootNamespace>
 
-    </PropertyGroup>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="CodeMechanic.Async" Version="1.0.4"/>
-        <PackageReference Include="CodeMechanic.Bash" Version="1.0.2"/>
-        <PackageReference Include="CodeMechanic.Diagnostics" Version="1.0.4"/>
-        <PackageReference Include="CodeMechanic.Embeds" Version="1.0.3"/>
-        <PackageReference Include="CodeMechanic.FileSystem" Version="2.0.16"/>
-        <PackageReference Include="CodeMechanic.Reflection" Version="1.0.4"/>
-        <PackageReference Include="CodeMechanic.RegularExpressions" Version="1.0.8"/>
-        <PackageReference Include="CodeMechanic.Shargs" Version="1.0.5"/>
-        <PackageReference Include="CodeMechanic.Types" Version="1.0.12"/>
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.4"/>
-        <PackageReference Include="Serilog" Version="4.2.0"/>
-        <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0"/>
-        <PackageReference Include="Serilog.Sinks.File" Version="7.0.0"/>
-        <PackageReference Include="Sharprompt" Version="3.0.0"/>
-        <PackageReference Include="Spectre.Console" Version="0.50.0"/>
-        <PackageReference Include="Spectre.Console.Cli" Version="0.50.0"/>
-        <PackageReference Include="Vogen" Version="7.0.3"/>
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CodeMechanic.Async" Version="1.0.4"/>
+    <PackageReference Include="CodeMechanic.Bash" Version="1.0.2"/>
+    <PackageReference Include="CodeMechanic.Diagnostics" Version="1.0.4"/>
+    <PackageReference Include="CodeMechanic.Embeds" Version="1.0.3"/>
+    <PackageReference Include="CodeMechanic.FileSystem" Version="2.0.16"/>
+    <PackageReference Include="CodeMechanic.Reflection" Version="1.0.4"/>
+    <PackageReference Include="CodeMechanic.RegularExpressions" Version="1.0.8"/>
+    <PackageReference Include="CodeMechanic.Shargs" Version="1.0.5"/>
+    <PackageReference Include="CodeMechanic.Types" Version="1.0.12"/>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.4"/>
+    <PackageReference Include="Serilog" Version="4.2.0"/>
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0"/>
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0"/>
+    <PackageReference Include="Sharprompt" Version="3.0.0"/>
+    <PackageReference Include="Spectre.Console" Version="0.50.0"/>
+    <PackageReference Include="Spectre.Console.Cli" Version="0.50.0"/>
+    <PackageReference Include="Vogen" Version="7.0.3"/>
+  </ItemGroup>
 
 </Project>
 
