@@ -2,4 +2,5 @@
   <Folder Name="/src/">
     <Project Path="src/sfapp.csproj" />
   </Folder>
+  <Project Path="CodeMechanic.Embeds/CodeMechanic.Embeds.csproj" />
 </Solution>

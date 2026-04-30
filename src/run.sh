@@ -1,3 +1,3 @@
-dotnet run promote
+dotnet run promote --debug
 
 

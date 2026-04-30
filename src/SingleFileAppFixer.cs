@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using CodeMechanic.Async;
 using CodeMechanic.Bash;
 using CodeMechanic.Diagnostics;
+using CodeMechanic.Embeds;
 using CodeMechanic.FileSystem;
 using CodeMechanic.RegularExpressions;
 using CodeMechanic.Types;
@@ -89,13 +90,32 @@ public class SingleFileAppFixer : QueuedService
         this.root = Path.Combine(root, project_namespace);
         logger.Information($"New app created at '{this.root}'");
 
-        var ass = Assembly.GetExecutingAssembly();
-        string template = CodeMechanic.Embeds.EmbedExtensions.ReadFile(ass, "razor.app.template");
+        string template = ReadTemplateV0();
 
-        Console.WriteLine($"{nameof(template)} :>> {template}");
+        // var embeds = Assembly.GetExecutingAssembly().GetEmbeddedProvider();
+
+        // string razor = await embeds.ReadAsync("razor.app.template");
+        // string pkg   = await embeds.ReadAsync("package_reference.template");
+
+        // embeds.Dump();                    // beautiful output
+
 
         // string output_from_build = await $"cd {this.root} && dotnet build".Bash(verbose: true);
         // logger.Information($"{nameof(output_from_build)} :>> {output_from_build}");
+    }
+
+
+    private string ReadTemplateV0()
+    {
+        var myass = Assembly.GetExecutingAssembly();
+
+        if (debug)
+            myass.Dump(nameof(myass));
+
+        string template = myass.ReadSourceFile("razor.app.template", debug: debug);
+
+        Console.WriteLine($"{nameof(template)} :>> {template}");
+        return template;
     }
 }
 
