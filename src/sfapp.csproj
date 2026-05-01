@@ -1,5 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <!-- REMOVE or comment these out; uncomment to DEBUG your SourceGenerators -->
+  <!--
+  <PropertyGroup>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
+  </PropertyGroup>
+  -->
+
+  <PropertyGroup>
+    <!-- Keep generated files out of your source tree and Rider noise -->
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>obj/Generated</CompilerGeneratedFilesOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Hide generated folder from Rider / solution explorer -->
+    <Compile Remove="obj\Generated\**"/>
+    <None Include="obj\Generated\**"/>
+  </ItemGroup>
+
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
@@ -19,6 +40,12 @@
     <PackageReference Include="CodeMechanic.Async" Version="1.0.4"/>
     <PackageReference Include="CodeMechanic.Bash" Version="1.0.2"/>
     <PackageReference Include="CodeMechanic.Diagnostics" Version="1.0.4"/>
+
+    <!--    <PackageReference Include="CodeMechanic.Embeds.SourceGen" Version="1.0.5" />-->
+    <!--    <PackageReference Include="CodeMechanic.Embeds.SourceGen" Version="1.0.6"-->
+    <!--                      PrivateAssets="all"-->
+    <!--                      ExcludeAssets="runtime"/>-->
+
     <!--    <PackageReference Include="CodeMechanic.Embeds" Version="1.0.5"/>-->
     <PackageReference Include="CodeMechanic.FileSystem" Version="2.0.16"/>
     <PackageReference Include="CodeMechanic.RegularExpressions" Version="1.0.11"/>
@@ -32,8 +59,17 @@
     <!--    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="9.0.0" />  &lt;!&ndash; or latest &ndash;&gt;-->
   </ItemGroup>
 
+
+  <!--  <ItemGroup>-->
+  <!--    &lt;!&ndash; Local testing &ndash;&gt;-->
+  <!--    <ProjectReference Include="..\..\CodeMechanic.Embeds.SourceGen\CodeMechanic.Embeds.SourceGen.csproj"-->
+  <!--                      OutputItemType="Analyzer"-->
+  <!--                      ReferenceOutputAssembly="false"/>-->
+  <!--  </ItemGroup>-->
+
+
   <!--  embeds-->
-  
+
   <PropertyGroup>
     <!-- This is the critical one -->
     <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
@@ -41,16 +77,25 @@
     <!-- Optional but nice -->
     <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems> <!-- if you want full control -->
   </PropertyGroup>
-  
+
   <ItemGroup>
-    
+
     <EmbeddedResource Include="**/*.template"/>
     <!--    <EmbeddedResource Include="templates/**"/>-->
     <!-- Add whatever folders you want -->
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CodeMechanic.Embeds.SourceGen\CodeMechanic.Embeds.SourceGen.csproj"
+
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false"
+    />
     <ProjectReference Include="..\CodeMechanic.Embeds\CodeMechanic.Embeds.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="templates\foo\"/>
   </ItemGroup>
 
 </Project>

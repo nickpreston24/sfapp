@@ -1,5 +1,9 @@
+using System;
+using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using CodeMechanic.Async;
 using CodeMechanic.Bash;
 using CodeMechanic.Diagnostics;
@@ -46,6 +50,11 @@ public class SingleFileAppFixer : QueuedService
 
         if (argsmap.HasCommand("promote"))
             steps.Add(PromoteSFAToFullCsproj);
+
+
+        // testing gen:
+
+
     }
 
     private async Task PromoteSFAToFullCsproj()

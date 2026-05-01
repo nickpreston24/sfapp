@@ -12,6 +12,7 @@ internal class Program
     {
         DotEnv.Load();
 
+        // var x = CodeMechanic.Embeds.Embedded.HelloWorldTemplate();
 
         var arguments = new ArgsMap(args);
 
