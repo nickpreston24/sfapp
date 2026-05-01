@@ -1,3 +1,6 @@
 [submodule "CodeMechanic.Embeds"]
 	path = CodeMechanic.Embeds
 	url = https://github.com/nickpreston24/CodeMechanic.Embeds.git
+[submodule "CodeMechanic.Embeds.SourceGen"]
+	path = CodeMechanic.Embeds.SourceGen
+	url = https://github.com/nickpreston24/CodeMechanic.Embeds.SourceGen.git
