@@ -81,6 +81,7 @@
   <ItemGroup>
 
     <EmbeddedResource Include="**/*.template"/>
+    <AdditionalFiles Include="**/*.template"/>
     <!--    <EmbeddedResource Include="templates/**"/>-->
     <!-- Add whatever folders you want -->
   </ItemGroup>
