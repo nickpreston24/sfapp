@@ -4,3 +4,9 @@
 [submodule "CodeMechanic.Embeds.SourceGen"]
 	path = CodeMechanic.Embeds.SourceGen
 	url = https://github.com/nickpreston24/CodeMechanic.Embeds.SourceGen.git
+[submodule "Drip.UI"]
+	path = Drip.UI
+	url = https://github.com/nickpreston24/Drip.UI.git
+[submodule "thecodemechanic"]
+	path = thecodemechanic
+	url = https://github.com/nickpreston24/thecodemechanic.git

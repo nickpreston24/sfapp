@@ -95,9 +95,6 @@
     <ProjectReference Include="..\CodeMechanic.Embeds\CodeMechanic.Embeds.csproj"/>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="templates\foo\"/>
-  </ItemGroup>
 
 </Project>
 

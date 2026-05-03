@@ -1,7 +1,15 @@
 <Solution>
+  <Folder Name="/CodeMechanic.Razorhat/">
+    <Project Path="CodeMechanic.Razorhat/CodeMechanic.RazorHAT.csproj" />
+  </Folder>
+  <Folder Name="/Drip.UI.SourceGen/">
+    <Project Path="Drip.UI.SourceGen\Drip.UI.SourceGen.csproj" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/sfapp.csproj" />
   </Folder>
   <Project Path="CodeMechanic.Embeds.SourceGen/CodeMechanic.Embeds.SourceGen.csproj" />
   <Project Path="CodeMechanic.Embeds/CodeMechanic.Embeds.csproj" />
+  <Project Path="Drip.UI/Drip.UI.csproj" />
+  <Project Path="thecodemechanic/thecodemechanic.csproj" />
 </Solution>
