@@ -114,9 +114,8 @@ namespace DripUI.SourceGen
                      // Source: {{originalPath}}
 
                      using Microsoft.AspNetCore.Razor.TagHelpers;
-                     using Drip.UI.TagHelpers;
 
-                     namespace Drip.UI.GeneratedIslands
+                     namespace Drip.UI
                      {
                          [HtmlTargetElement("{{lower}}")]
                          public class {{component_name}}Island : IslandTagHelper
