@@ -142,9 +142,9 @@ namespace DripUI.SourceGen
             var serialized = JsonSerializer.Serialize(raw, opts); // yields: "\"<span class=\\\"...\\\">Badge</span>\""
 
 
-            var escaped = raw.Replace("\"", "\"\"\"\""); // for verbatim @"..." literals
+            // var escaped = raw.Replace("\"", "\"\"\"\""); // for verbatim @"..." literals
 
-            var encoded = JsonSerializer.Serialize(raw); // returns "\"<div class=\\\"...\\\">...\""
+            // var encoded = JsonSerializer.Serialize(raw); // returns "\"<div class=\\\"...\\\">...\""
 
 
             return $$"""
@@ -222,7 +222,7 @@ namespace DripUI.SourceGen
 
             Dictionary<string, string> map = new Dictionary<string, string>()
             {
-                [@"\@(\w+)="] = "x-on:$1", // fixes the collision between alpine events and Razor's weird @ events.
+                [@"\@(\w+)="] = "x-on:$1=", // fixes the collision between alpine events and Razor's weird @ events.
                 // [@""""] = @"\""",
 
                 [@""""""] = "\"", // fixes quad-quotes "" → " and AVOIDS single quotes (again, razor is a butt about those).
