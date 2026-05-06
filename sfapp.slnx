@@ -8,6 +8,7 @@
   <Folder Name="/src/">
     <Project Path="src/sfapp.csproj" />
   </Folder>
+  <Project Path="..\patchman\samples\OnlyPaws\OnlyPaws.csproj" />
   <Project Path="CodeMechanic.Embeds.SourceGen/CodeMechanic.Embeds.SourceGen.csproj" />
   <Project Path="CodeMechanic.Embeds/CodeMechanic.Embeds.csproj" />
   <Project Path="Drip.UI/Drip.UI.csproj" />
