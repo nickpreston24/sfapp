@@ -10,3 +10,6 @@
 [submodule "thecodemechanic"]
 	path = thecodemechanic
 	url = https://github.com/nickpreston24/thecodemechanic.git
+[submodule "Drip.UI.SourceGen"]
+	path = Drip.UI.SourceGen
+	url = https://github.com/nickpreston24/Drip.UI.SourceGen.git
