@@ -1,3 +1,4 @@
+*.DotSettings.user
 *.log
 *.nupkg
 .forklift/
